@@ -1,0 +1,43 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <filter>
+    <filter-name>logFilter</filter-name>
+  	<filter-class>com.vargadaniel.hackathon.filter.LogFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>blockFilter</filter-name>
+  	<filter-class>com.vargadaniel.hackathon.filter.BlockFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>logFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>blockFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+  	<servlet-name>ShellServlet</servlet-name>
+  	<display-name>ShellServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.vargadaniel.hackathon.servlet.ShellServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EchoServlet</servlet-name>
+  	<display-name>EchoServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.vargadaniel.hackathon.servlet.EchoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ShellServlet</servlet-name>
+  	<url-pattern>/shell</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EchoServlet</servlet-name>
+  	<url-pattern>/echo</url-pattern>
+  </servlet-mapping>
+</web-app>
